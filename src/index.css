@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+::selection{
+  color: rgb(116, 114, 114);
+}
