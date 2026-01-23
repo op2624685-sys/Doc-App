@@ -17,7 +17,7 @@ function Card({ data, reference }) {
                     </span>
                 </div>
                 {data.tag.isOpen && (
-                    <div className={`w-full py-3 ${data.tag.tagColor === 'red' ? 'bg-red-900' : data.tag.tagColor === 'blue' ? 'bg-blue-900' : data.tag.tagColor === 'orange' ? 'bg-orange-900' : 'bg-green-900'} flex items-center justify-center`}>
+                    <div className={`w-full py-3 ${data.tag.tagColor === 'red' ? 'bg-red-900' : data.tag.tagColor === 'blue' ? 'bg-blue-900' : data.tag.tagColor === 'orange' ? 'bg-orange-900' : data.tag.tagColor === 'yellow' ? 'bg-yellow-700' : 'bg-green-900'} flex items-center justify-center`}>
                         <h3 className='text-md font-semibold'>Download</h3>
                     </div>)}
             </div>

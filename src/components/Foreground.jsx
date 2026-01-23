@@ -1,41 +1,32 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
+// import { useNavigate } from 'react-router-dom'
 import Card from './Card.jsx'
 
 const Foreground = () => {
 
     const ref = useRef(null);
+    const [data, setData] = useState([
+        // Initial dummy data can be placed here if needed
+    ]);
 
-    const data = [
-        {
-            desc: "This is my first docs note and this is coded by my hand",
-            filesize: ".0.34mb",
-            close: false,
-            tag: { isOpen: true, tagTitle: 'Download Now', tagColor: 'blue' }
-        },
-        {
-            desc: "Here is the second card of this doc app, you can download it",
-            filesize: ".0.12mb",
-            close: true,
-            tag: { isOpen: true, tagTitle: 'Download Now', tagColor: 'red' }
-        },
-        {
-            desc: "This was another and different card in this doc app",
-            filesize: "1.2mb",
-            close: true,
-            tag: { isOpen: false, tagTitle: 'Download Now', tagColor: 'orange' }
-        },
-        {
-            desc: "This is the best card in this doc app and you can download it",
-            filesize: ".0.26mb",
-            close: true,
-            tag: { isOpen: true, tagTitle: 'Download Now', tagColor: 'green' }
-        },
-    ];
+    // Load data from localStorage on component mount
+    useEffect(() => {
+        setTimeout(() => {
+            const savedDocs = JSON.parse(localStorage.getItem('docs')) || [];
+            if (savedDocs.length > 0) {
+                setData(savedDocs);
+            }
+        }, 0);
+    }, []);
 
     return (
         <div ref={ref} className='fixed p-4 top-21 left-0 z-[3] h-screen w-full flex flex-wrap gap-5'>
             {data.map((item) => (
-                <Card data={item} reference={ref} />
+                <div 
+
+                >
+                    <Card data={item} reference={ref} />
+                </div>
             ))}
 
         </div>
